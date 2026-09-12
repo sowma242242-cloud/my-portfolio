@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>R. Sowndarya — SEO & Digital Marketing</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: #f5f5f5;
+            font-family: "DM Sans", sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ---------------- NAVBAR ---------------- */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(11, 11, 11, 0.75);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #ff6333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            font-size: 14px;
+            color: #bdbdbd;
+        }
+
+        .nav-links a {
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff6333;
+        }
+
+        .nav-button {
+            border: 1px solid #444;
+            padding: 11px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #ff6333;
+            border-color: #ff6333;
+            color: #000;
+        }
+
+        /* ---------------- HERO ---------------- */
+
+        .hero {
+            min-height: 100vh;
+            padding: 170px 6% 80px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: 65%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #ff6333;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #ff6333;
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(70px, 10vw, 150px);
+            line-height: 0.84;
+            letter-spacing: -7px;
+            font-weight: 600;
+        }
+
+        .hero h1 .outline {
+            color: transparent;
+            -webkit-text-stroke: 1px #777;
+        }
+
+        .hero h1 .orange {
+            color: #ff6333;
+        }
+
+        .hero-description {
+            max-width: 570px;
+            margin-top: 45px;
+            color: #a7a7a7;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 15px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #ff6333;
+            color: #080808;
+            font-weight: 700;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255,99,51,0.25);
+        }
+
+        .secondary-btn {
+            border: 1px solid #444;
+            color: #ddd;
+        }
+
+        .secondary-btn:hover {
+            border-color: #ff6333;
+        }
+
+        /* ---------------- HERO VISUAL ---------------- */
+
+        .hero-visual {
+            position: absolute;
+            right: 5%;
+            top: 23%;
+            width: 350px;
+            height: 350px;
+        }
+
+        .circle {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid #333;
+            border-radius: 50%;
+            top: 30px;
+            left: 30px;
+        }
+
+        .circle::before {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            background: #ff6333;
+            border-radius: 50%;
+            top: 45px;
+            left: 45px;
+            filter: blur(70px);
+            opacity: 0.35;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: #151515;
+            border: 1px solid #333;
+            padding: 22px;
+            border-radius: 18px;
+            width: 190px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .card-one {
+            top: 0;
+            right: 0;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .card-two {
+            bottom: 15px;
+            left: 0;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        .floating-card small {
+            color: #888;
+            font-size: 11px;
+        }
+
+        .floating-card strong {
+            display: block;
+            font-size: 28px;
+            margin-top: 8px;
+            color: #ff6333;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* ---------------- MARQUEE ---------------- */
+
+        .marquee {
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            overflow: hidden;
+            padding: 20px 0;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+            color: #777;
+            font-family: "Space Grotesk";
+            font-size: 20px;
+        }
+
+        .marquee span {
+            margin: 0 25px;
+            color: #ff6333;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ---------------- SECTIONS ---------------- */
+
+        section {
+            padding: 130px 6%;
+        }
+
+        .section-label {
+            color: #ff6333;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: "Space Grotesk";
+            font-size: clamp(45px, 7vw, 90px);
+            letter-spacing: -4px;
+            line-height: 0.95;
+            max-width: 900px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .about-text {
+            color: #999;
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .about-highlight {
+            font-size: 32px;
+            line-height: 1.3;
+            font-family: "Space Grotesk";
+        }
+
+        /* ---------------- SKILLS ---------------- */
+
+        .skills-grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .skill-card {
+            min-height: 180px;
+            padding: 28px;
+            border: 1px solid #292929;
+            border-radius: 20px;
+            background: #101010;
+            transition: 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff6333;
+        }
+
+        .skill-number {
+            color: #555;
+            font-size: 12px;
+        }
+
+        .skill-card h3 {
+            margin-top: 60px;
+            font-size: 20px;
+        }
+
+        /* ---------------- PROJECTS ---------------- */
+
+        .projects {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            min-height: 380px;
+            border: 1px solid #292929;
+            border-radius: 25px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(145deg, #151515, #0e0e0e);
+            transition: 0.4s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: #ff6333;
+        }
+
+        .project-number {
+            color: #ff6333;
+            font-size: 13px;
+        }
+
+        .project h3 {
+            position: absolute;
+            left: 35px;
+            bottom: 75px;
+            font-family: "Space Grotesk";
+            font-size: 42px;
+            max-width: 450px;
+        }
+
+        .project p {
+            position: absolute;
+            left: 35px;
+            bottom: 35px;
+            color: #888;
+        }
+
+        .project-shape {
+            position: absolute;
+            right: -70px;
+            top: -70px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 1px solid #444;
+        }
+
+        .project-shape::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #ff6333;
+            border-radius: 50%;
+            top: 60px;
+            left: 60px;
+            opacity: 0.8;
+            filter: blur(25px);
+        }
+
+        /* ---------------- CTA ---------------- */
+
+        .cta {
+            text-align: center;
+            padding: 160px 6%;
+        }
+
+        .cta h2 {
+            font-family: "Space Grotesk";
+            font-size: clamp(55px, 9vw, 120px);
+            letter-spacing: -6px;
+            line-height: 0.9;
+        }
+
+        .cta h2 span {
+            color: #ff6333;
+        }
+
+        .cta p {
+            color: #888;
+            max-width: 500px;
+            margin: 30px auto;
+            line-height: 1.7;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+
+        footer {
+            padding: 35px 6%;
+            border-top: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* ---------------- MOBILE ---------------- */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-visual {
+                opacity: 0.3;
+                right: -100px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 20px;
+            }
+
+            .nav-button {
+                display: none;
+            }
+
+            .hero {
+                padding: 140px 20px 70px;
+            }
+
+            .hero h1 {
+                font-size: 65px;
+                letter-spacing: -4px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 90px 20px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                min-height: 330px;
+            }
+
+            .cta h2 {
+                font-size: 60px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            R<span>.</span> Sowndarya
+        </div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </div>
+
+        <a href="#contact" class="nav-button">
+            Let's Talk ↗
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <div class="dot"></div>
+                SEO & DIGITAL MARKETING
+            </div>
+
+            <h1>
+                Digital<br>
+                <span class="outline">ideas</span><br>
+                <span class="orange">that grow.</span>
+            </h1>
+
+            <p class="hero-description">
+                I'm R. Sowndarya — an SEO & Digital Marketing learner
+                exploring search, content, social media and web development
+                to build meaningful digital experiences.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="primary-btn">
+                    Explore My Work ↗
+                </a>
+
+                <a href="#about" class="secondary-btn">
+                    About Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="circle"></div>
+
+            <div class="floating-card card-one">
+                <small>FOCUS</small>
+                <strong>SEO</strong>
+            </div>
+
+            <div class="floating-card card-two">
+                <small>EXPLORING</small>
+                <strong>WEB</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MARQUEE -->
+
+    <div class="marquee">
+
+        <div class="marquee-content">
+
+            SEO
+            <span>✦</span>
+            DIGITAL MARKETING
+            <span>✦</span>
+            CONTENT
+            <span>✦</span>
+            WEB DEVELOPMENT
+            <span>✦</span>
+            SEO
+            <span>✦</span>
+            DIGITAL MARKETING
+            <span>✦</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-label">
+            01 — About
+        </div>
+
+        <h2 class="section-title">
+            Learning. Creating. Growing.
+        </h2>
+
+        <div class="about-grid">
+
+            <p class="about-text">
+
+                I’m R. Sowndarya, an SEO & Digital Marketing learner with a growing interest in
+                creating digital experiences that are both creative and result-driven.
+
+                <br><br>
+
+                I’m currently building my skills across SEO, content creation, social media marketing,
+                website development, and AI-powered digital tools. I enjoy learning how brands can
+                improve their online visibility, connect with the right audience, and turn ideas into
+                meaningful digital results.
+                  
+                <br><br>
+
+                Alongside my learning journey, I work on real-world projects that help me understand
+                how SEO, content, social media, and web design come together to build a strong
+                digital presence.
+
+            </p>
+
+            <div class="about-highlight">
+
+                “I don't just want to learn digital marketing.
+                I want to understand how everything works together.”
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-label">
+            02 — What I Explore
+        </div>
+
+        <h2 class="section-title">
+            Skills & Tools
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-number">01</div>
+                <h3>SEO</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-number">02</div>
+                <h3>Content</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-number">03</div>
+                <h3>Social Media</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-number">04</div>
+                <h3>WordPress</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-number">05</div>
+                <h3>On-Page SEO</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-number">06</div>
+                <h3>Off-Page SEO</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-number">07</div>
+                <h3>AI Tools</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-number">08</div>
+                <h3>Web Development</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+    <div class="section-label">03 — PROJECTS</div>
+
+    <div class="section-heading">
+        <h2>Things I’m <span>building.</span></h2>
+        <p>
+            A collection of projects and practical experiments
+            from my learning journey in SEO, digital marketing and web development.
+        </p>
+    </div>
+
+    <div class="projects">
+        <!-- Project 01 -->
+        <div class="project">
+
+            <div class="project-image">
+                 <img src="file:///C:/Users/lenovo/Downloads/personal-portfolio.webp" alt="Personal portfolio project">
+           </div>
+           
+            <div class="project-content">
+                <div class="project-number">PROJECT / 01</div>
+                <h3>Personal Portfolio</h3>
+                <p>
+                    Building my personal portfolio using HTML and CSS
+                    to showcase my skills, learning journey and projects.
+                </p>
+                <span class="project-tag">HTML / CSS</span>
+            </div>
+        </div>
+
+        <!-- Project 02 -->
+        <div class="project">
+            <div class="project-content">
+                <div class="project-number">PROJECT / 02</div>
+                <h3>SEO Learning Project</h3>
+                <p>
+                    Practicing keyword research, On-Page SEO,
+                    Off-Page SEO and content optimization.
+                </p>
+                <span class="project-tag">SEO</span>
+            </div>
+        </div>
+
+        <!-- Project 03 -->
+        <div class="project">
+            <div class="project-content">
+                <div class="project-number">PROJECT / 03</div>
+                <h3>Digital Marketing</h3>
+                <p>
+                    Exploring content creation, social media planning
+                    and digital marketing strategies.
+                </p>
+                <span class="project-tag">DIGITAL MARKETING</span>
+            </div>
+        </div>
+
+        <!-- Project 04 -->
+        <div class="project">
+            <div class="project-content">
+                <div class="project-number">PROJECT / 04</div>
+                <h3>AI & Automation</h3>
+                <p>
+                    Learning how AI tools and automation can simplify
+                    everyday digital marketing workflows.
+                </p>
+                <span class="project-tag">AI / AUTOMATION</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- CTA -->
+
+    <section class="cta" id="contact">
+
+        <div class="section-label">
+            04 — Contact
+        </div>
+
+        <h2>
+            Let's make<br>
+            something <span>grow.</span>
+        </h2>
+
+        <p>
+            I'm always interested in learning, creating and connecting
+            with people working in the digital space.
+        </p>
+
+        <a href="mailto:your-email@example.com" class="primary-btn">
+            Get In Touch ↗
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            © 2026 R. Sowndarya
+        </div>
+
+        <div>
+            SEO & Digital Marketing
+        </div>
+
+    </footer>
+
+</body>
+</html>
